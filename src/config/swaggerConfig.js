@@ -1,8 +1,8 @@
-require("dotenv").config();
 const swaggerJsDoc = require("swagger-jsdoc");
 const path = require("path");
 
 const PORT = process.env.PORT || 8000;
+const global_url = process.env.GLOBAL;
 
 const swaggerOptions = {
   definition: {
@@ -12,13 +12,14 @@ const swaggerOptions = {
       version: "1.0.0",
       description: "Documentation for the backend APIs",
     },
-    basePath: "/api/v1",
     servers: [
       {
-        url: "https://"
+        url: `http://localhost:${PORT}`,
+        description: "Local server",
       },
       {
-        url: `http://localhost:${PORT}`,
+        url: global_url,
+        description: "Render (Production) server",
       },
     ],
     components: {
@@ -30,11 +31,7 @@ const swaggerOptions = {
         },
       },
     },
-    security: [
-      {
-        BearerAuth: [],
-      },
-    ],
+    security: [{ BearerAuth: [] }],
   },
   apis: [path.join(__dirname, "../routes/*.js")],
 };
