@@ -1,0 +1,42 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+
+# Logs
+logs
+*.log
+logs/*.log
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage
+coverage/
+*.lcov
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build output
+dist/
+build/
+
+# IDE & editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+*.iml
+
+# TypeScript cache (if you use TS)
+*.tsbuildinfo
+
+# MongoDB local files (if you accidentally dump data here)
+dump/
