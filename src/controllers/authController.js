@@ -41,9 +41,10 @@ export const login = async (req, res) => {
     }
 
     try {
-        const user = await userModel.findOne({ username });
+        const user = await userModel.findOne({ username, password });
+        
         if (!user) {
-            return res.status(404).json({ message: "User not found" });
+            return res.status(404).json({ message: "User or password is not found" });
         }       
 
         const token = jwt.sign(

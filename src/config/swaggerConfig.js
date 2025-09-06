@@ -3,6 +3,7 @@ const path = require("path");
 
 const PORT = process.env.PORT || 8000;
 const global_url = process.env.GLOBAL;
+console.log("uidjfioje", global_url);
 
 const swaggerOptions = {
   definition: {
